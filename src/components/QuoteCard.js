@@ -1,21 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import './QuoteCard.css';
 
-function QuoteCard(props) {
-  return (
-    <figure className="QuoteCard">
-      <img src={props.image} alt={props.character} />
-      <figcaption>
-        <blockquote>{props.quote}</blockquote>
-        <cite>{props.character}</cite>
-      </figcaption>
-    </figure>
-  );
+class QuoteCard extends React.Component {
+  render() {
+    return (
+      <figure className="QuoteCard">
+        <img src={this.props.image} alt={this.props.character} />
+        <figcaption>
+          <blockquote>{this.props.quote}</blockquote>
+          <cite>{this.props.character}</cite>
+        </figcaption>
+      </figure>
+    );
+  }
 }
-
-QuoteCard.propTypes = {
-  character: PropTypes.string.isRequired
-};
 
 export default QuoteCard;
