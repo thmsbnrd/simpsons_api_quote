@@ -10,6 +10,7 @@ class QuoteForm extends React.Component {
             id="character"
             name="character"
             type="text"
+            value="Homer"
             onChange={(event) => {
               const input = event.target;
               console.log('NAME:', input.name, 'VALUE:', input.value);
