@@ -1,6 +1,8 @@
 import React from 'react';
 import './QuoteForm.css';
 
+const MAX_LENGTH = 42;
+
 class QuoteForm extends React.Component {
     constructor(props) {
         super(props);
