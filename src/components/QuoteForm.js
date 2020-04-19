@@ -5,6 +5,11 @@ class QuoteForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = { character: '' };
+        this.handleChange = this.handleChange.bind(this);
+    }
+
+    handleChange(event) {
+        this.setState({ character: event.target.value });
     }
 
     render() {
@@ -16,9 +21,7 @@ class QuoteForm extends React.Component {
             name="character"
             type="text"
             value={this.state.character}
-            onChange={(event) => {
-                this.setState({ character: event.target.value })
-            }}
+            onChange={this.handleChange}
           />
         </form>
       );
