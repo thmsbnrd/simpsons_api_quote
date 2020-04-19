@@ -22,7 +22,7 @@ class QuoteForm extends React.Component {
     
     render() {
         return (
-            <form className="QuoteForm">
+            <form className="QuoteForm" onSubmit={this.handleSubmit}>
             <label htmlFor="character">Character:</label>
             <input
                 id="character"
