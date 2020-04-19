@@ -8,33 +8,34 @@ class QuoteForm extends React.Component {
         super(props);
         this.state = { character: '' };
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+    
     handleChange(event) {
-        if (this.state.character.length <= MAX_LENGTH) {
+        if (event.target.value.length <= MAX_LENGTH) {
             this.setState({ character: event.target.value });
         }
     }
-
+    
     handleSubmit(event) {
         event.preventDefault();
-      }
-
+    }
+    
     render() {
-      return (
-        <form className="QuoteForm">
-          <label htmlFor="character">Character:</label>
-          <input
-            id="character"
-            name="character"
-            type="text"
-            value={this.state.character}
-            onChange={this.handleChange}
-          />
-          <p>{this.state.character}</p>
-        </form>
-      );
+        return (
+            <form className="QuoteForm">
+            <label htmlFor="character">Character:</label>
+            <input
+                id="character"
+                className={(this.state.character.length >= MAX_LENGTH) ? "length-maximum-reached" : "length-ok"}
+                name="character"
+                type="text"
+                value={this.state.character}
+                onChange={this.handleChange}
+            />
+            <p className="remaining-characters">{MAX_LENGTH - this.state.character.length} remaining characters.</p>
+            <p>{this.state.character}</p>
+            </form>
+        );
     }
   }
 
