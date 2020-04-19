@@ -1,7 +1,7 @@
 import React from 'react';
 import './QuoteForm.css';
 
-const MAX_LENGTH = 42;
+const MAX_LENGTH = 30;
 
 class QuoteForm extends React.Component {
     constructor(props) {
@@ -12,7 +12,9 @@ class QuoteForm extends React.Component {
     }
 
     handleChange(event) {
-        this.setState({ character: event.target.value });
+        if (this.state.character.length <= MAX_LENGTH) {
+            this.setState({ character: event.target.value });
+        }
     }
 
     handleSubmit(event) {
