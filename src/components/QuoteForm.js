@@ -2,6 +2,11 @@ import React from 'react';
 import './QuoteForm.css';
 
 class QuoteForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { character: 'Homer Simpson' };
+    }
+
     render() {
       return (
         <form className="QuoteForm">
@@ -10,7 +15,7 @@ class QuoteForm extends React.Component {
             id="character"
             name="character"
             type="text"
-            value="Homer"
+            value={this.state.character}
             onChange={(event) => {
               const input = event.target;
               console.log('NAME:', input.name, 'VALUE:', input.value);
