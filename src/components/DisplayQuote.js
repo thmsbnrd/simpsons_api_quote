@@ -1,4 +1,5 @@
 import React from 'react';
+import './QuoteCard.css';
   
 function DisplayQuote({ quote }) {
   return (
@@ -12,13 +13,6 @@ function DisplayQuote({ quote }) {
                 <blockquote>{quote.quote}</blockquote>
                 <p>
                     <cite>{quote.character}</cite>
-                    <span 
-                    onClick={event => {
-                    const newFav = !this.state.favorite;
-                    this.setState({ favorite: newFav });
-                    }}
-                    className={this.state.favorite ? "is-favorite" : ""}
-                    >&#9733;</span>
                 </p>
             </figcaption>
         </figure>
